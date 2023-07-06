@@ -230,7 +230,7 @@ extension UIImage {
         // ------
         
         // We only keep the first few dominant colors.
-        let dominantColorsMaxCount = 8
+        let dominantColorsMaxCount = 5
         dominantColors = Array(dominantColors.prefix(dominantColorsMaxCount))
         
         // ------
@@ -265,7 +265,7 @@ extension UIImage {
         }
         let kMeansFilter = CIFilter(name: "CIKMeans")!
         
-        let clusterCount = 8
+        let clusterCount = 5
 
         kMeansFilter.setValue(ciImage, forKey: kCIInputImageKey)
         kMeansFilter.setValue(CIVector(cgRect: ciImage.extent), forKey: "inputExtent")
